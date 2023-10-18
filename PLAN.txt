@@ -1,0 +1,11 @@
+Acceptance Criteria:
+
+Login/out functions should be working along with a sign-in and sign-out buttons, sign out button will be on the nav-bar on the far right end, sign-in button will be the home page, page requires a sign-in to accese the roster.
+
+nav-bar will be the first thing that renders when logging in, the nave-bar will have 2 buttons, View team, and Add player, nav bar should also display a small .JPEG of team logo.
+
+when clicking on the "View team" button on the nav-bar, cards should pop up, each card is a player with details of that player; height, weight, name, and position, each card should contain a "Delete" button and a  "Edit" button, when the Edit button is clicked, a form should pop up with the updated information automaticallty filling the form out, when submitting the form it should update the card. Delete button should remove the player from the site and firebase, completely deleting the data.
+
+when clicking "Add a player" a form should pop up asking for First and Last name, weight, height, and position. When the player is created, a data entry will be created in firebase, it should have a UID with the aforementioned form Requirements, when the data entry is created, the "View team" page should be updated.
+
+if another user creates a player, the "View team" shouldn't update for ALL users.
