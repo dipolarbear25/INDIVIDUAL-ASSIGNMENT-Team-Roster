@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getPlayerDetails } from '../../API/PlayerData';
-import PlayerCard from '../../components/PlayerCard';
 
 export default function ViewPlayer() {
   const [playerDetails, setPlayerDetails] = useState({});
@@ -21,9 +20,18 @@ export default function ViewPlayer() {
   });
 
   return (
-    <div>{playerDetails.books?.map((book) => (
-      <PlayerCard key={book.firebaseKey} bookObj={book} onUpdate={getADetails} />
-    ))}
-    </div>
+    <>
+      <div className="viewTxt">
+      <div className="d-flex flex-column">
+          <img src={playerDetails.image} alt={playerDetails.first_name} style={{ width: '300px' }} />
+        </div>
+          <h5>
+           Name: {playerDetails.first_name} {playerDetails.last_name}
+            <br /> position: {playerDetails.position }
+          </h5>
+          <h5>Height: {playerDetails.height}</h5>
+          <h5>weight: {playerDetails.weight}</h5>
+      </div>
+    </>
   );
 }

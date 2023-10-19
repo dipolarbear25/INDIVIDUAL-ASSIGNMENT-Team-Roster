@@ -42,7 +42,7 @@ PlayerCard.propTypes = {
     height: PropTypes.string,
     position: PropTypes.string,
     firebaseKey: PropTypes.string,
-    weight: PropTypes.string,
+    weight: PropTypes.number,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

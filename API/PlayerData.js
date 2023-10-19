@@ -96,7 +96,7 @@ const teamOnSale = (uid) => new Promise((resolve, reject) => {
 });
 
 const getPlayerDetails = async (firebaseKey) => {
-  const player = await getSingleAuthor(firebaseKey);
+  const player = await getSingleTeam(firebaseKey);
 
   return { ...player };
 };
