@@ -22,15 +22,15 @@ export default function ViewPlayer() {
   return (
     <>
       <div className="viewTxt">
-      <div className="d-flex flex-column">
+        <div className="d-flex flex-column">
           <img src={playerDetails.image} alt={playerDetails.first_name} style={{ width: '300px' }} />
         </div>
-          <h5>
-           Name: {playerDetails.first_name} {playerDetails.last_name}
-            <br /> position: {playerDetails.position }
-          </h5>
-          <h5>Height: {playerDetails.height}</h5>
-          <h5>weight: {playerDetails.weight}</h5>
+        <h5>
+          Name: {playerDetails.first_name} {playerDetails.last_name}
+          <br /> position: {playerDetails.position}
+        </h5>
+        <h5>Height: {playerDetails.height}</h5>
+        <h5>weight: {playerDetails.weight}</h5>
       </div>
     </>
   );
