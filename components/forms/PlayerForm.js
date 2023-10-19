@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
-import { createTeam, updateTeam } from '../../API/PlayerData';
+import { createTeam, updateTeam, getTeam } from '../../API/PlayerData';
 import { useAuth } from '../../utils/context/authContext';
-import { getTeam } from '../../API/PlayerData';
 
 const intialState = {
   first_name: '',
@@ -99,7 +98,7 @@ function PlayerForm({ obj }) {
             required
           />
         </Form.Group>
-        
+
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>height</Form.Label>
           <Form.Control
