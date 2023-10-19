@@ -3,7 +3,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
-import { signOut } from '../utils/auth';
 
 function Home() {
   // TODO: Get user ID using useAuth Hook
