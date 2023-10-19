@@ -2,8 +2,8 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-const getBooks = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books.json?orderBy="uid"&equalTo="${uid}"`, {
+const getTeam = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -14,9 +14,9 @@ const getBooks = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE BOOK
-const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${firebaseKey}.json`, {
+// TODO: DELETE Team
+const deleteTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -27,9 +27,9 @@ const deleteBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET SINGLE BOOK
-const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${firebaseKey}.json`, {
+// TODO: GET SINGLE Team
+const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -40,9 +40,9 @@ const getSingleBook = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: CREATE BOOK
-const createBook = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books.json`, {
+// TODO: CREATE Team
+const createTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -54,9 +54,9 @@ const createBook = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: UPDATE BOOK
-const updateBook = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books/${payload.firebaseKey}.json`, {
+// TODO: UPDATE Team
+const updateTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -68,8 +68,8 @@ const updateBook = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getBooksByAuthor = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
+const getteamByAuthor = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -80,8 +80,8 @@ const getBooksByAuthor = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const booksOnSale = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/books.json?orderBy="uid"&equalTo="${uid}"`, {
+const teamOnSale = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/team.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -95,12 +95,19 @@ const booksOnSale = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getPlayerDetails = async (firebaseKey) => {
+  const player = await getSingleAuthor(firebaseKey);
+
+  return { ...player };
+};
+
 export {
-  getBooks,
-  createBook,
-  booksOnSale,
-  deleteBook,
-  getSingleBook,
-  updateBook,
-  getBooksByAuthor,
+  getTeam,
+  createTeam,
+  teamOnSale,
+  deleteTeam,
+  getSingleTeam,
+  updateTeam,
+  getteamByAuthor,
+  getPlayerDetails
 };
