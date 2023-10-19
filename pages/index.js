@@ -18,7 +18,7 @@ function Home() {
       </Link>
       <br />
       <br />
-      <Link href="/authors" passHref>
+      <Link href="/player/new" passHref>
         <Button>Create a Player</Button>
       </Link>
     </div>
