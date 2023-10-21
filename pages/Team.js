@@ -25,7 +25,7 @@ function ShowTeam() {
 
   return (
     <div className="text-center my-4">
-      <h1>Tennessee Titans offensive lineup</h1>
+      <h1>Tennessee Titans Offensive lineup</h1>
       <Link href="/player/new" passHref>
         <Button>Add A Player</Button>
       </Link>
