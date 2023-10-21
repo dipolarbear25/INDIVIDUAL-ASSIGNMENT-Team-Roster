@@ -27,7 +27,10 @@ export default function NavBar() {
               <Nav.Link>View Defensive Line</Nav.Link>
             </Link>
             <Link passHref href="/player/new">
-              <Nav.Link>Create a Player</Nav.Link>
+              <Nav.Link>Create a Offensive Player</Nav.Link>
+            </Link>
+            <Link passHref href="/Defensiveplayer/new">
+              <Nav.Link>Create a Defensive player</Nav.Link>
             </Link>
             <Button variant="danger" onClick={signOut}>Sign Out</Button>
           </Nav>

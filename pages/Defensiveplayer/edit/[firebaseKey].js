@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getSingleDefensiveTeam } from '../../../API/DefensivePlayerData';
-import PlayerForm from '../../../components/forms/PlayerForm';
+import DefensivePlayerForm from '../../../components/forms/DefensivePlayerForm';
 
-export default function EditPlayer() {
+export default function EditDefensivePlayer() {
   const [editItem, setEditItem] = useState({});
   const router = useRouter();
   // TODO: grab the firebasekey
@@ -15,5 +15,5 @@ export default function EditPlayer() {
   }, [firebaseKey]);
 
   // TODO: pass object to form
-  return (<PlayerForm obj={editItem} />);
+  return (<DefensivePlayerForm obj={editItem} />);
 }
