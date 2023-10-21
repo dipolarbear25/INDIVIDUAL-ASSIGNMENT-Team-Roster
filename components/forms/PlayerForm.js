@@ -16,7 +16,7 @@ const intialState = {
 
 function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(intialState);
-  const [players, setPlayers] = useState([]);
+  const [, setPlayers] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
