@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { getTeam } from '../API/PlayerData';
+import { getDefensiveTeam } from '../API/DefensivePlayerData';
 import { useAuth } from '../utils/context/authContext';
-import PlayerCard from '../components/PlayerCard';
+import DefensivePlayerCard from '../components/DefensivePlayerCard';
 
-function ShowTeam() {
+function ShowDefensiveTeam() {
   // TODO: Set a state for books
   const [Team, setTeam] = useState([]);
 
@@ -15,7 +15,7 @@ function ShowTeam() {
 
   // TODO: create a function that makes the API call to get all the Team
   const getAllTheTeam = () => {
-    getTeam(user.uid).then(setTeam);
+    getDefensiveTeam(user.uid).then(setTeam);
   };
 
   // TODO: make the call to the API to get all the Team on component render
@@ -25,18 +25,18 @@ function ShowTeam() {
 
   return (
     <div className="text-center my-4">
-      <h1>Tennessee Titans offensive lineup</h1>
-      <Link href="/player/new" passHref>
+      <h1>Tennessee Titans Defensive lineup</h1>
+      <Link href="/Defensiveplayer/new" passHref>
         <Button>Add A Player</Button>
       </Link>
       <div className="d-flex flex-wrap">
         {/* TODO: map over Team here using BookCard component */}
         {Team.map((player) => (
-          <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllTheTeam} />
+          <DefensivePlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllTheTeam} />
         ))}
       </div>
     </div>
   );
 }
 
-export default ShowTeam;
+export default ShowDefensiveTeam;

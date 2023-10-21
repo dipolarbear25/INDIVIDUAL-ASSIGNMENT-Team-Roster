@@ -2,8 +2,8 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-const getTeam = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team.json?orderBy="uid"&equalTo="${uid}"`, {
+const getDefensiveTeam = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/defensiveteam.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -15,8 +15,8 @@ const getTeam = (uid) => new Promise((resolve, reject) => {
 });
 
 // TODO: DELETE Team
-const deleteTeam = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team/${firebaseKey}.json`, {
+const deleteDefensiveTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/defensiveteam/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -28,8 +28,8 @@ const deleteTeam = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // TODO: GET SINGLE Team
-const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team/${firebaseKey}.json`, {
+const getSingleDefensiveTeam = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/defensiveteam/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -41,8 +41,8 @@ const getSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // TODO: CREATE Team
-const createTeam = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team.json`, {
+const createDefensiveTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/defensiveteam.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -55,8 +55,8 @@ const createTeam = (payload) => new Promise((resolve, reject) => {
 });
 
 // TODO: UPDATE Team
-const updateTeam = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team/${payload.firebaseKey}.json`, {
+const updateDefensiveTeam = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/defensiveteam/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -68,17 +68,17 @@ const updateTeam = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getPlayerDetails = async (firebaseKey) => {
-  const player = await getSingleTeam(firebaseKey);
+const getDefensivePlayerDetails = async (firebaseKey) => {
+  const player = await getSingleDefensiveTeam(firebaseKey);
 
   return { ...player };
 };
 
 export {
-  getTeam,
-  createTeam,
-  deleteTeam,
-  getSingleTeam,
-  updateTeam,
-  getPlayerDetails
+  getDefensiveTeam,
+  createDefensiveTeam,
+  deleteDefensiveTeam,
+  getSingleDefensiveTeam,
+  updateDefensiveTeam,
+  getDefensivePlayerDetails
 };

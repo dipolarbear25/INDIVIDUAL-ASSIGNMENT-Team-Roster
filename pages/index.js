@@ -14,7 +14,10 @@ function Home() {
         Hello {user.displayName}!
       </h1>
       <Link href="/Team" passHref>
-        <Button>View Team</Button>
+        <Button>View Offensive Line</Button>
+      </Link>
+      <Link href="/DefensiveTeam" passHref>
+        <Button>View Defensive Line</Button>
       </Link>
       <br />
       <br />
